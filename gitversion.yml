@@ -1,0 +1,22 @@
+mode: ContinuousDelivery
+next-version: 0.1.0
+
+assembly-versioning-scheme: MajorMinorPatch
+assembly-file-versioning-scheme: MajorMinorPatch
+
+branches:
+  main:
+    regex: ^main$
+    increment: Patch
+  develop:
+    regex: ^develop$
+    increment: Minor
+  feature:
+    regex: ^features?[\/-](?<BranchName>.+)
+    increment: Inherit
+  release:
+    regex: ^release[/-]
+    increment: None
+  hotfix:
+    regex: ^hotfix[/-]
+    increment: Patch
