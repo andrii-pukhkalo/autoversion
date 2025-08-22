@@ -20,3 +20,13 @@ branches:
   hotfix:
     regex: ^hotfix[/-]
     increment: Patch
+  support:
+    regex: ^support[\/-](?<BranchName>\d+\.\d+)$
+    increment: Patch
+    is-main-branch: true
+    prevent-increment:
+      of-merged-branch: true
+    source-branches:
+      - main
+      - support
+    
